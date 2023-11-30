@@ -32,17 +32,18 @@ def guess():
         update_info_label("ゲームを終了します。")
         guess_button.config(state=tk.DISABLED)
     elif guess == answer:
-        update_info_label("正解です！おめでとうございます！")
+        update_info_label("正解です！\nおめでとうございます！")
         guess_button.config(state=tk.DISABLED)
-    elif guess < answer:
-        update_info_label("もっと大きい数字です。")
     else:
-        update_info_label("もっと小さい数字です。")
+        if guess < answer:
+            update_info_label("もっと大きい数字です。")
+        else:
+            update_info_label("もっと小さい数字です。")
 
-    attempt += 1
-    if attempt > 6:
-        update_info_label(f"残念！正解は {answer} でした。")
-        guess_button.config(state=tk.DISABLED)
+        attempt += 1
+        if attempt > 6:
+            update_info_label(f"残念！正解は {answer} でした。")
+            guess_button.config(state=tk.DISABLED)
 
     entry.delete(0, tk.END)
 
