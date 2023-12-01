@@ -30,3 +30,10 @@
   - 東京における気温と降雨量のデータ
 - clustering.ipynb
   - クラスタリング手法 (K-means 法)の事例
+
+### part3
+
+- guess.py
+  - 数当てゲームのサンプル
+- guess_gui.py
+  - 数当てゲームの GUI 版サンプル
